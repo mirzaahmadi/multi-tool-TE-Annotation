@@ -4,8 +4,16 @@ This tool is split into three parts - 1. The TE detection portion only using the
 
 ![Pipeline Overview](Pipeline_Overview.png)
 
-# Prerequisites
-- Think about all the prerequisties software that is needed to actually download this tool
+# Prerequisites (Do I list every single module on compute canada loaded and python/R library needed - what if I install them in the code? I think I can just put the modules on compute canada because they may be using a different platform and not just load these - for the python and r libraries - as long as they have python whatever installed my scripts which include importing external libraries are good enough)
+- StdEnv/2020
+- gcc/13.3
+- Apptainer
+- cd-hit/4.8.1
+- python/3.11
+- R/4.3.1
+- emboss 6.6.0
+- hmmer
+- Put into container later (Python: sys, subprocess, collections, re, pandas, SeqIO from Biopython, numpy, os, Shutil, argparse, pathlib, random, csv, sklearn, joblib, imabalnced-learn, matplotlib, statistics, seaborn) | (R: stringr, dplyr, knitr, openxlsx, ftrCool)
 
 # Installation using Apptainer or Singularity
 - So here I need to think about if someone else is using this thing, how would I translate this so that someone can like 'earlgrey-build' this shit
