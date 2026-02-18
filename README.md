@@ -2,7 +2,7 @@
 Placeholder is a transposable element detetion pipeline which leverages five leading and pre-established TE tools combined with Ai classification to comprehensivly detect the TEs within any input genome. 
 This tool is split into three parts - 1. The TE detection portion only using the classic TE detection tools, 2. then one that allows you to train an AI model, 3. and a last one that allows you to actually use that model to help classify unkonwns from step 1. Full process is shown below.
 
-*SHOW FLOWCHART OF EVERYTHING*
+![Pipeline Overview](Pipeline_Overview.png)
 
 # Prerequisites
 - Think about all the prerequisties software that is needed to actually download this tool
