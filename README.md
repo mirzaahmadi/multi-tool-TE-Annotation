@@ -150,6 +150,8 @@ Training_outputs-<training_dataset_name>/
 ```
 
 ### Example output
+![Sequence_Length_Boxplot](Examples/Non-LTR_LINE_Seq_Length_Boxplot.png) 
+![Training_Metrics](Examples/per_class_metrics.png)
 
 ## Step 3
 Use the trained machine learning model to classify any remaining unknown sequences 
@@ -189,16 +191,14 @@ Classification_outputs/
 ```
 
 ### Example output 
-![Sequence_Length_Boxplot](Examples/Non-LTR_LINE_Seq_Length_Boxplot.png) 
-![Training_Metrics](Examples/per_class_metrics.png)>
-
-
+![Training_Metrics](Examples/classification_summary_threshold_0.70.png)
 
 
 
 
 
 # References 
+
 
 # Acknowledgements
 
