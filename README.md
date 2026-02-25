@@ -189,10 +189,8 @@ Classification_outputs/
 ```
 
 ### Example output 
-<p align="center">
-  <img src="Examples/Non-LTR_LINE_Seq_Length_Boxplot.png" width="48%">
-  <img src="Examples/per_class_metrics.png" width="48%">
-</p>
+![Sequence_Length_Boxplot](Examples/Non-LTR_LINE_Seq_Length_Boxplot.png) 
+![Training_Metrics](Examples/per_class_metrics.png)>
 
 
 
