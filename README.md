@@ -26,6 +26,7 @@ This tool is split into three parts - 1. The TE detection portion only using the
 - This is where I put my docker iamage I guess
 
 # Important Considerations
+- Note that the way the scripts are written and shit, this will only work in the way that I set it up if you are on a compute canada. it used like module load ... and stuff which is ocmpute canada sepcific, so for now, only HPC systems on Compute Canada are supported
 - For step 2 and 3, This is an experiemental phase using AI classification approaches. the training database that allows you to train a model has been curated from several gold-standard TE databases online. Please take into account that when trained on this dataset, the supervised machine learning Random Forest model is imabalanced. We recommend that if you train the model using our dataset, you take into account the accuracy and how it performs at reliable TE classification for differnet TE classes. We do not say this dataset is good enough, this is mainly an epxloraty aproahc - we recommend that you swap out or enhance this dataset of gold standard TEs with your own database in the same format, and then continue training.
   
 # Usage
