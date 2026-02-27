@@ -5,6 +5,8 @@
 
 set -euo pipefail
 
+# Load all dependencies
+
 # PFAM
 # Create main directory
 mkdir -p Databases
@@ -29,15 +31,21 @@ git clone https://github.com/aziele/pfam_scan
 echo "Pfam database and pfam_scan successfully installed in Databases/"
 cd ..
 
+
+# Training Dataset and Sif Files from Zenodo
 # Download TRAINING DATASET
 wget https://zenodo.org/records/18777048/files/training_dataset.CSV?download=1
 
 # Download TE Sif Files
-mkdir 
-wget https://zenodo.org/records/18777146/files/annosine_v2.sif?download=1 # annosine_v2.sif
-wget https://zenodo.org/records/18777146/files/earlgrey_v5.1.sif?download=1 # earlgrey_v5.1.sif
-wget https://zenodo.org/records/18777146/files/heliano.sif?download=1 # heliano.sif
-wget https://zenodo.org/records/18777146/files/HiTE_V3.3.3.sif?download=1 # HiTE_V3.3.3.sif 
+mkdir -p TE_pipeline_sif_files
+wget -O TE_pipeline_sif_files/annosine_v2.sif $base_url/annosine_v2.sif?download=1
+wget -O TE_pipeline_sif_files/earlgrey_v5.1.sif $base_url/earlgrey_v5.1.sif?download=1
+wget -O TE_pipeline_sif_files/heliano.sif $base_url/heliano.sif?download=1
+wget -O TE_pipeline_sif_files/HiTE_V3.3.3.sif $base_url/HiTE_V3.3.3.sif?download=1
+
+
+
+
 
 
 
