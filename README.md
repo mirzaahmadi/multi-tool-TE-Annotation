@@ -14,6 +14,7 @@ A full walkthrough of TE Atlas is available <a href="https://youtu.be/iEsX8fwtbN
    here
 </a>
 
+---
 
 # Setup
 ### 1️. Clone the Repository
@@ -30,6 +31,7 @@ Execute the setup script to download required databases and container files:
 ```
 This ensures all required resources are configured before running the pipeline.
 
+---
 
 # Prerequisites
 TE Atlas is currently configured for the **Digital Research Alliance of Canada (Compute Canada)** HPC environment. The following modules must be available:
@@ -65,6 +67,7 @@ Example of an appropriate header format:
 ```
 Improper header formatting may cause certain tools to fail. Adjust headers as needed before running the pipeline.
 
+---
 
 # Usage
 
@@ -254,6 +257,7 @@ Example output:
   <figcaption><em>Figure X. Classification summary showing reclassification of previously unknown sequences using the trained model (confidence threshold = 0.70).</em></figcaption>
 </figure>
 
+---
 
 # References
 
@@ -273,6 +277,7 @@ Li, W., & Godzik, A. (2006). Cd-hit: a fast program for clustering and comparing
 
 Zielenkiewicz, P. (n.d.). pfam_scan [Computer software]. GitHub. https://github.com/aziele/pfam_scan
 
+---
 
 # Acknowledgements
 
