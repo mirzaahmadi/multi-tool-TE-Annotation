@@ -1,16 +1,18 @@
-# Placeholder Title
-Placeholder is a transposable element detetion pipeline which leverages five leading and pre-established TE tools combined with AI classification to comprehensivly detect the TEs within any input genome. 
-This tool is split into three parts - 1. The TE detection portion only using the classic TE detection tools, 2. then one that allows you to train an AI model, 3. and a last one that allows you to actually use that model to help classify unkonwns from step 1. Full process is shown below.
-
-## Video demo link
-
-## Set up 
-
-
+TE Atlas
+TE Atlas is a transposable element detetion pipeline which leverages five leading and pre-established TE tools combined with AI classification to comprehensivly detect the TEs within any input genome. 
+This tool is split into three parts - 1. The TE detection portion only using the classic TE detection tools, 2. then one that allows you to train an AI model, 3. and a last one that allows you to actually use that model to help classify unkonwns from step 1. Full process is shown below. The general framework is illustrated below:
 
 ![Pipeline Overview](Examples/Pipeline_Overview.png)
 
-# Prerequisites (Do I list every single module on compute canada loaded and python/R library needed - what if I install them in the code? I think I can just put the modules on compute canada because they may be using a different platform and not just load these - for the python and r libraries - as long as they have python whatever installed my scripts which include importing external libraries are good enough)
+## Video demo link for how it works
+https://youtu.be/iEsX8fwtbNY 
+
+## Set up 
+1. Git clone this repository (make this git clone thing proper I want it as markdown) in a HPC cluster environment
+2. Then run the .setup/ file which sets up all databases and container files ensuring that you have everything you need to begin.
+
+
+# Prerequisites 
 - StdEnv/2020
 - gcc/13.3
 - Apptainer
@@ -19,16 +21,14 @@ This tool is split into three parts - 1. The TE detection portion only using the
 - R/4.3.1
 - emboss 6.6.0
 - hmmer
-- Put into container later (Python: sys, subprocess, collections, re, pandas, SeqIO from Biopython, numpy, os, Shutil, argparse, pathlib, random, csv, sklearn, joblib, imabalnced-learn, matplotlib, statistics, seaborn) | (R: stringr, dplyr, knitr, openxlsx, ftrCool)
 
-# Installation using Apptainer or Singularity
-- So here I need to think about if someone else is using this thing, how would I translate this so that someone can like 'earlgrey-build' this shit
-- This is where I put my docker iamage I guess
 
 # Important Considerations
 - Note that the way the scripts are written and shit, this will only work in the way that I set it up if you are on a compute canada. it used like module load ... and stuff which is ocmpute canada sepcific, so for now, only HPC systems on Compute Canada are supported
 - For step 2 and 3, This is an experiemental phase using AI classification approaches. the training database that allows you to train a model has been curated from several gold-standard TE databases online. Please take into account that when trained on this dataset, the supervised machine learning Random Forest model is imabalanced. We recommend that if you train the model using our dataset, you take into account the accuracy and how it performs at reliable TE classification for differnet TE classes. We do not say this dataset is good enough, this is mainly an epxloraty aproahc - we recommend that you swap out or enhance this dataset of gold standard TEs with your own database in the same format, and then continue training.
-  
+- Please ensure that the gneome headers you put in are of standard genome conventional formats conventional with GenBank and NCBI: like this strcuture Structure: Accession ID, organism name, chromosome scaffold info, and then assembly info, otherwise some tools may not accept certain formats, so just reworrk your genome headers if need be to fit this requirement. eg. of a good one is this: KZ451882.1 Felis catus isolate Cinnamon breed Abyssinian unplaced genomic scaffold chrUn_Scaffold_147, whole genome shotgun sequence.
+
+
 # Usage
 
 ## Step 1
@@ -156,7 +156,7 @@ Training_outputs-<training_dataset_name>/
         │       └── TIR_Seq_Length_Boxplot.png
 ```
 
-### Example output
+### Example output - the EDA sequence length boxplot for one TE order and the per-class metrics from the training_dataset supervised machine learning model
 ![Sequence_Length_Boxplot](Examples/Non-LTR_LINE_Seq_Length_Boxplot.png) 
 ![Training_Metrics](Examples/per_class_metrics.png)
 
@@ -197,32 +197,28 @@ Classification_outputs/
             └── Final_inference_dataset.csv
 ```
 
-### Example output 
+### Example output  - a classification summary of all the unkonwns that are now reclassified or whatever
 ![Training_Metrics](Examples/classification_summary_threshold_0.70.png)
 
 
 # References 
-Earl Grey
-https://academic.oup.com/mbe/article/41/4/msae068/7635926
+Baril, T., Galbraith, J.G., and Hayward, A., Earl Grey: A Fully Automated User-Friendly Transposable Element Annotation and Analysis Pipeline, Molecular Biology and Evolution, Volume 41, Issue 4, April 2024, msae068 doi:10.1093/molbev/msae068
 
-HiTE
-https://github.com/CSU-KangHu/HiTE
+Hu, K., Ni, P., Xu, M. et al. HiTE: a fast and accurate dynamic boundary adjustment approach for full-length transposable element detection and annotation. Nat Commun 15, 5573 (2024). https://doi.org/10.1038/s41467-024-49912-8
 
-AnnoSine
-https://academic.oup.com/plphys/article/188/2/955/6430992
+Yang Li, Ning Jiang, Yanni Sun, AnnoSINE: a short interspersed nuclear elements annotation tool for plant genomes, Plant Physiology, Volume 188, Issue 2, February 2022, Pages 955–970, https://doi.org/10.1093/plphys/kiab524
 
-Heliano
-https://academic.oup.com/nar/article/52/17/e79/7730539
+Li Z , Gilbert C , Peng H , Pollet N. "Discovery of numerous novel Helitron-like elements in eukaryote genomes using HELIANO." Nucleic Acids Research, 2024. doi: doi.org/10.1093/nar/gkae679.
 
-MiteFinder
-https://github.com/jhu99/miteFinder
+Li Z , Pollet N. "HELIANO: a Helitron-like element annotator." Zenodo (2024). doi: 10.5281/zenodo.10625239
 
-CD-HIT
-https://pmc.ncbi.nlm.nih.gov/articles/PMC3516142/
+Hu J, Zheng Y, Shang X. MiteFinderII: a novel tool to identify miniature inverted-repeat transposable elements hidden in eukaryotic genomes. BMC medical genomics. 2018 Nov;11(5):51-9. https://doi.org/10.1186/s12920-018-0418-y
 
-PFAM Scan
-https://github.com/aziele/pfam_scan
+Weizhong Li, Adam Godzik, Cd-hit: a fast program for clustering and comparing large sets of protein or nucleotide sequences, Bioinformatics, Volume 22, Issue 13, July 2006, Pages 1658–1659, https://doi.org/10.1093/bioinformatics/btl158
+
+Zielenkiewicz, P. (n.d.). pfam_scan (Version X.X) [Computer software]. GitHub. https://github.com/aziele/pfam_scan
 
 # Acknowledgements
 
+This work has been my masters thesis project in Bioinformatics and Artificial Intelligence at the university of Guelph. This work would not have been possible without the support and guidance of my master's thesis committee: Dr. T. Ryan Gregory, Dr. Stefan Kremer, Dr. Tyler Elliott and Dr. Brent Saylor.
 
