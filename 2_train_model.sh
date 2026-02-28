@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -t 0-01:00:00
-#SBATCH --mem=16G
+#SBATCH --mem=10G
 #SBATCH -c 6
-#SBATCH --mail-user=INPUT_EMAIL
+#SBATCH --mail-user=your@email.com
 #SBATCH --mail-type=BEGIN,FAIL,END
 #SBATCH --account=INPUT_ACCOUNT
 
