@@ -1,6 +1,17 @@
 # TE Atlas
 **TE Atlas** is an integrated transposable element (TE) detection and classification pipeline that leverages five established TE annotation tools combined with supervised machine learning to comprehensively detect and characterize TEs within any input genome.
 
+# Contents
+- [Overview](#overview)
+- [Setup](#setup)
+- [Prerequisites](#prerequisites)
+- [Important Considerations](#important-considerations)
+- [Usage](#usage)
+- [References](#references)
+- [Acknowledgements](#acknowledgements)
+
+
+# Overview
 The pipeline consists of three modular components:
 1. **Multi-tool TE detection** using established annotation tools  
 2. **Supervised machine learning model training**  
