@@ -10,7 +10,9 @@ The overall workflow is illustrated below:
 ![Pipeline Overview](Examples/Pipeline_Overview.png)
 
 ## Video Demonstration
-A full walkthrough of TE Atlas is available here: https://youtu.be/iEsX8fwtbNY
+A full walkthrough of TE Atlas is available here: <a href="https://youtu.be/iEsX8fwtbNY" target="_blank">
+  Watch the TE Atlas Video Tutorial
+</a>
 
 
 # Setup
