@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --time=1-06:00:00
-#SBATCH --account=def-skremer
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=56G
-#SBATCH --mail-user=mahmad15@uoguelph.ca
-#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH -t 0-01:00:00
+#SBATCH --mem=16G
+#SBATCH -c 6
+#SBATCH --mail-user=INPUT_EMAIL
+#SBATCH --mail-type=BEGIN,FAIL,END
+#SBATCH --account=INPUT_ACCOUNT
 
 # NOTE: This script will train a model on a new dataset. The corresponding outputs
 # (training metrics, pickle artifacts, visualizations, and intermediate CSVs)
