@@ -238,7 +238,7 @@ sbatch 3_classify.sh <complete_csv> <cdhit_output> <model_pkl> <scaler_pkl> <lab
 ```text
 # Required Parameters:
 <complete_csv> == Complete TE results table (outputted from step 1 as "COMPLETE_TE_RESULTS_[genome].fa/fna")
-<cdhit_output> == CD-HIT consensus sequence FASTA (outputted from step 1 as "FINAL_cdhit_[genome])
+<cdhit_output> == CD-HIT consensus sequence FASTA (outputted from step 1 as "FINAL_cdhit_[genome]")
 <model_pkl> == Serialized trained random forest model (outputted from step 2)
 <scaler_pkl> == Serialized scaler (outputted from step 2)
 <label_encoder_pkl> == Serialized label encoder (outputted from step 2)
