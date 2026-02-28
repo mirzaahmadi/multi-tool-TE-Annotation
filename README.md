@@ -38,6 +38,7 @@ cd TE-Atlas
 ### 2. Run the Setup Script
 Execute the setup script to download required databases and container files:
 ```bash
+chmod +x setup.sh
 ./setup.sh
 ```
 This ensures all required resources are configured before running the pipeline.
@@ -77,6 +78,10 @@ Improper header formatting may cause certain tools to fail. Adjust headers as ne
 ---
 
 # Usage
+
+> ⚠️ **Resource Allocation Notice**  
+> Before running each pipeline step, review and adjust the CPU cores, memory, time limits, and temporary storage settings specified in the `#SBATCH` directives at the top of the corresponding Bash script.  
+> These values should be tailored to your genome size, dataset scale, and HPC allocation to ensure efficient and successful execution.
 
 ## Step 1 — Multi-tool annotation
 Given an input genome, this step runs multiple integrated tools to detect and classify TEs.
