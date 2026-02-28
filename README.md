@@ -159,11 +159,11 @@ sbatch Train_Model.sh <dataset.csv>
 
 ```text
 # Required Parameters:
-<dataset.csv> == Labelled TE dataset which will be used to train the model
+<dataset.csv> == Labelled TE dataset used to train the supervised machine learning model
 
 # Optional Parameters:
---kbest <int> == specifies how many of the most relevant features  to keep when using SelectKBest from scikit-learn.
---n-estimators <int> == It sets how many decision trees are built during training.
+--kbest <int> == Specifies number of top features to retain using SelectKBest (feature selection)
+--n-estimators <int> == Specifies number of decision trees to build in the Random Forest model
 ```
 
 This dataset may be replaced with your own labelled TE database, provided it follows this same structure and column format to ensure compatability with the training workflow:
