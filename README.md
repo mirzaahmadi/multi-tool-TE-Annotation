@@ -88,7 +88,7 @@ Given an input genome, this step runs multiple integrated tools to detect and cl
 
 ```bash
 # Run with minimum command options
-sbatch main.sh -- -g [genome.fna/fasta]
+sbatch 1_main.sh -- -g [genome.fna/fasta]
 ```
 
 ```text
@@ -159,7 +159,7 @@ Train a Random Forest classifier using a labelled TE dataset.
 
 ```bash
 # Run with minimum command options
-sbatch Train_Model.sh <dataset.csv>
+sbatch 2_train_model.sh <dataset.csv>
 ```
 
 ```text
@@ -232,7 +232,7 @@ Use the trained model to classify remaining unknown sequences from Step 1.
 
 ```bash
 # Run with minimum command options
-sbatch classify.sh <complete_csv> <cdhit_output> <model_pkl> <scaler_pkl> <label_encoder_pkl> <selector_pkl> 
+sbatch 3_classify.sh <complete_csv> <cdhit_output> <model_pkl> <scaler_pkl> <label_encoder_pkl> <selector_pkl> 
 ```
 
 ```text
