@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --time=0-02:00:00
-#SBATCH --account=def-skremer
-#SBATCH --cpus-per-task=12
-#SBATCH --mem=26G
-#SBATCH --mail-user=mahmad15@uoguelph.ca
-#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH -t 0-01:00:00
+#SBATCH --mem=16G
+#SBATCH -c 6
+#SBATCH --mail-user=INPUT_EMAIL
+#SBATCH --mail-type=BEGIN,FAIL,END
+#SBATCH --account=INPUT_ACCOUNT
 
 # NOTE: Classify unknown sequences using a trained model.
 # Required positional args (6):
