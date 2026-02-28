@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -t 3-00:00:00
-#SBATCH --mem=116G
-#SBATCH -c 24
-#SBATCH --mail-user=mahmad15@uoguelph.ca
+#SBATCH -t 0-01:00:00
+#SBATCH --mem=16G
+#SBATCH -c 6
+#SBATCH --mail-user=INPUT_EMAIL
 #SBATCH --mail-type=BEGIN,FAIL,END
-#SBATCH --account=def-skremer
+#SBATCH --account=INPUT_ACCOUNT
 
 # =================THE FOLLOWING BLOCK ENSURES THAT THE THREADING FOR THE DIFFERENT TE TOOLS IS CORRECT AND SENSIBLE=================
 
